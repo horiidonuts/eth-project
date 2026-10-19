@@ -1,0 +1,16 @@
+{
+  "name": "evote",
+  "private": true,
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @evote/web dev",
+    "build": "pnpm -r --if-present build",
+    "lint": "pnpm -r --if-present lint",
+    "test": "pnpm -r --if-present test",
+    "chain": "pnpm --filter @evote/contracts chain",
+    "deploy:local": "pnpm --filter @evote/contracts deploy:local"
+  }
+}

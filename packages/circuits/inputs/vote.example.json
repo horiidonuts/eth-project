@@ -1,0 +1,9 @@
+{
+  "_note": "SYNTHETIC example input for circuits/vote.circom (TREE_DEPTH = 20). idNumber starts with 0, so it can never be a real T.C. kimlik no. pathElements/pathIndices/root are placeholders: regenerate them with the real hash once Poseidon is wired in.",
+  "idNumber": "00000000001",
+  "pathElements": ["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"],
+  "pathIndices": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  "root": "0",
+  "electionId": "1",
+  "candidateId": "0"
+}

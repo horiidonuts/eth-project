@@ -1,0 +1,10 @@
+{
+  "name": "@evote/circuits",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Circom circuits for the vote proof. No circuit yet; see README.md.",
+  "scripts": {
+    "circuits:build": "bash scripts/build.sh",
+    "circuits:copy": "bash scripts/copy-artifacts.sh"
+  }
+}

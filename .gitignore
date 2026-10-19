@@ -1,36 +1,52 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ── Dependencies ────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+.pnp
+.pnp.*
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
+# ── Secrets: NEVER commit real keys ─────────────────────────────
+# Every .env* file is ignored; only the documented templates are tracked.
+.env*
+!.env.example
 *.pem
+*.key
+# Hardhat keystore (encrypted, but per-developer)
+.hardhat-keystore/
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
-.env
-
-# vercel
+# ── Next.js (apps/web) ──────────────────────────────────────────
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ── Hardhat (packages/contracts) ────────────────────────────────
+packages/contracts/artifacts/
+packages/contracts/cache/
+packages/contracts/types/
+packages/contracts/typechain-types/
+packages/contracts/coverage/
+packages/contracts/coverage.json
+packages/contracts/dist/
+packages/contracts/snapshots/
+packages/contracts/.gas-snapshot
+# Local-chain deployments are throwaway; Sepolia deployments are committed.
+packages/contracts/ignition/deployments/chain-31337/
+
+# ── Circom (packages/circuits) ──────────────────────────────────
+# Intermediate outputs are rebuilt; the final artifacts (vote.wasm,
+# vote_final.zkey, verification_key.json) ARE committed so the whole team
+# uses the keys that match the on-chain verifier. See packages/circuits/README.md
+packages/circuits/build/
+packages/circuits/ptau/*.ptau
+packages/circuits/keys/*_0000.zkey
+packages/circuits/keys/*_0001.zkey
+packages/circuits/keys/*_contrib*.zkey
+
+# ── Misc ────────────────────────────────────────────────────────
+coverage/
+*.log
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

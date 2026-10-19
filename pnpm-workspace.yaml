@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Which dependencies may run install scripts (pnpm blocks them by default).
+allowBuilds:
+  # Prebuilt binaries ship as optional dependencies; build scripts not needed
+  # (copied from the create-next-app template).
+  sharp: false
+  unrs-resolver: false
+  # Pulled in by Hardhat (via tsx); its postinstall only verifies the native binary.
+  esbuild: true
